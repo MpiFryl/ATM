@@ -29,7 +29,7 @@ if (!isset($_SESSION['username'])) {
 
 <body>
 
-    <div class="bg-primary p-2 d-flex rounded align-items-center gap-2 mb-2" style="margin: 180px 250px 0 250px">
+    <div class="bg-primary p-2 d-flex rounded align-items-center gap-2 mb-2" style="margin: 140px 250px 0 250px">
         <i class="fa-solid fa-user fa-fw"></i>
 
         <?php
@@ -49,6 +49,7 @@ if (!isset($_SESSION['username'])) {
                 class="fa-solid fa-right-from-bracket fa-fw"></i></a>
     </div>
 
+    <!-- Saldo -->
     <div class="d-flex w-100" style="padding: 0 250px 0 250px">
         <!-- Kolom 1 -->
         <div
@@ -86,6 +87,42 @@ if (!isset($_SESSION['username'])) {
             </a>
         </div>
 
+    </div>
+
+    <!-- Ubah pin -->
+    <!-- Button trigger modal -->
+    <div class="w-100 text-center mt-3">
+        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            😢 Lupa pin?
+        </button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Masukkan pin baru mu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Input form -->
+                <form action="proses/ubah.php" method="post">
+                    <div class="modal-body">
+                        <label for="pin_baru">Masukkan pin</label>
+                        <input type="password" class="form-control" placeholder="Pin baru" aria-label="Pin"
+                            aria-describedby="addon-wrapping" minlength="6" name="pin" required>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary" name="bt_ubah">Simpan</button>
+                        <!-- type="submit" -->
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
 </body>
