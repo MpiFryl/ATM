@@ -14,7 +14,19 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Data exporting was unselected.
+-- Dumping structure for table atm.users
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `no_telp` varchar(50) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
+  `password` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
+  `pin` varchar(8) COLLATE utf8mb4_general_ci NOT NULL,
+  `saldo` bigint NOT NULL DEFAULT (0),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Dumping data for table atm.users: ~3 rows (approximately)
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
